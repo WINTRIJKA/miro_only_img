@@ -1,0 +1,149 @@
+.container_miro {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.hue-shift {
+    animation: hue-shift 5s infinite alternate;
+}
+
+
+.landing-page_miro {
+    width: 50%;
+    min-height: 100vh;
+    /*background-image: linear-gradient(to bottom right, #434863, #252839);*/
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    /*align-items: center;*/
+    /*z-index: 1;*/
+}
+.landing-page_miro::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: 100vh;
+    background-image: url("../images/bg-pat.png");
+    background-size: cover;
+    opacity: .4;
+    z-index: -1;
+}
+.content_miro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.content-details_miro {
+    max-width: 80%;
+}
+
+
+.image-group_miro {
+    text-align: center;
+    position: relative;
+}
+.blob-large_miro {
+    animation: move-up 2s infinite alternate;
+}
+.blob-bean_miro {
+    position: absolute;
+    top: 2.5rem;
+    left: -1rem;
+    z-index: 10;
+    animation: move-down 2s infinite alternate;
+}
+.blob {
+    position: absolute;
+    z-index: -1;
+}
+.blob-1_miro {
+    top: -11rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.blob-2_miro {
+    top: 15rem;
+    left: -17rem;
+}
+.blob-3_miro {
+    right: 5rem;
+    bottom: -24rem;
+}
+.blob-4_miro {
+    left: -21rem;
+    bottom: -17rem;
+}
+@keyframes move-up {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(2rem);
+    }
+}
+@keyframes move-down {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-2rem);
+    }
+}
+@keyframes hue-shift {
+    from {
+        filter: hue-rotate(0);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+@media screen and (max-width: 768px){
+
+    .content_miro {
+        grid-template-columns: 1fr;
+    }
+    .content-details_miro {
+        order: 1;
+        max-width: 100%;
+    }
+
+    .image-group_miro {
+        margin-top: 10rem;
+    }
+    .blob-large_miro {
+        width: 70%;
+    }
+    .blob-bean_miro {
+        width: 30%;
+        top: -1rem;
+        left: 5rem;
+    }
+    .blob-1_miro {
+        display: none;
+    }
+    .blob-2_miro {
+        left: 30rem;
+        bottom: -1rem;
+        top: inherit;
+        width: 25%;
+    }
+    .blob-3_miro {
+        right: -3rem;
+        bottom: -25rem;
+    }
+    .blob-4_miro {
+        display: none;
+    }
+}
+@media screen and (max-width: 700px) {
+
+    .blob-2_miro {
+        display: none;
+    }
+    .blob-3_miro{
+        width: 50%;
+        bottom: -10rem;
+    }
+}
